@@ -1,7 +1,7 @@
  
 import {Image,Menu,MenuButton,MenuItem,MenuList,Flex,Box,Spacer,Stack,Center,Text,Divider,Link,useDisclosure,Modal,ModalOverlay,ModalContent,ModalHeader,ModalBody,
-  ModalCloseButton,Select,FormControl,FormLabel,Popover,PopoverTrigger,PopoverContent,PopoverArrow,Button,PopoverHeader,
-PopoverCloseButton,PopoverBody} from '@chakra-ui/react';
+  ModalCloseButton,Select,FormControl,FormLabel,Popover,PopoverTrigger,PopoverContent,PopoverArrow,Button,PopoverCloseButton,PopoverBody, Grid,GridItem}
+   from '@chakra-ui/react';
 import logo1 from '../logo1.png';
 import React from 'react';
 import { ChevronDownIcon } from '@chakra-ui/icons';
@@ -64,11 +64,20 @@ import {Link as RouterLink} from 'react-router-dom'
     <PopoverArrow />
     <PopoverCloseButton />
     <PopoverBody >
-      <Box>
+      <Box >
      <Center><Image src="https://a.travel-assets.com/pricing-claim/sparkle_white.svg" alt="not available" /></Center>
      <Text fontSize='2xl'>Save an average of 15% on thousands of hotels when you're signed in</Text>
-     <Button padding='2px 70px 2px 70px' bg='#3662d8' color='white' fontWeight='bold'>Sign in</Button>
-     <Center><Text>Create a free account</Text></Center></Box>
+     <Link as={RouterLink} to='/signin'><Button padding='2px 70px 2px 70px' bg='#3662d8' color='white' fontWeight='bold'>Sign in</Button></Link>
+     <Link as={RouterLink} to='/create'><Center><Text size={10}>Create a free account</Text></Center></Link>
+     <Grid templateColumns='repeat(1,1fr)' gap={1} marginTop={5}>
+     <GridItem w='100%' h='10'>List of Favouirate</GridItem>
+     <Divider orientation='horizontal'/>
+     <GridItem w='100%' h='10'>Expedia Reward</GridItem>
+     </Grid>
+     <Divider orientation='horizontal'/>
+     
+     <Text>Feedback</Text>
+     </Box>
     </PopoverBody>
   </PopoverContent>
 </Popover>
@@ -93,9 +102,9 @@ import {Link as RouterLink} from 'react-router-dom'
   <FormLabel>Country</FormLabel>
   <Select placeholder='Select country'>
    {
-    country.map((el)=>{
+    country.map((el,i)=>{
         return (
-            <option>{el}</option>
+            <option key={i}>{el}</option>
         )
     })
    }
