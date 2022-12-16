@@ -5,8 +5,10 @@ import {
 import axios from 'axios';
 import {Link} from 'react-router-dom'
 import { useEffect, useState } from 'react';
-import Home from './Home';
+import { useNavigate } from 'react-router-dom';
+// import Home from './Home';
 const SignIn = () => {
+  const navigate = useNavigate()
     const [data,setData] = useState({
       Email :"",
       Password:""
@@ -31,7 +33,8 @@ const SignIn = () => {
   const handleClick = (e) => {
     e.preventDefault()
      if(count === 1){
-      window.location.replace("http://localhost:3000/")
+      // window.location.replace("http://localhost:3000/")
+      navigate('/')
      }
      else {
       alert ("Wrong Information")
