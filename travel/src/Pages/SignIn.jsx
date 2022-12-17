@@ -23,6 +23,7 @@ const SignIn = () => {
     const {name,value} = e.target; 
      setData({...data,[name]:value})
   }
+  // console.log(info)
   let count = 0;
   info.map((el,i)=>{
     if(el.Email === data.Email && el.Password === data.Password){

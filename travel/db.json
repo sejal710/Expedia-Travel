@@ -15,25 +15,32 @@
   ],
   "signup": [
     {
-      "id": 200,
-      "First Name": "Sejal",
-      "Last Name": "Jaiswal",
-      "Email": "sejal@gmail.com",
-      "Password": "123abc"
-    },
-    {
-      "First Name": "riya",
-      "Last Name": "jain",
-      "Email": "riay@123",
-      "Password": "riya",
-      "id": 201
-    },
-    {
       "First Name": "sejal",
       "Last Name": "jaiswal",
       "Email": "sejal",
       "Password": "sejal",
       "id": 202
+    },
+    {
+      "First Name": "sejal12",
+      "Last Name": "jaiswal",
+      "Email": "sejal234",
+      "Password": "sejal123",
+      "id": 203
+    },
+    {
+      "First Name": "priya",
+      "Last Name": "yadav",
+      "Email": "priya",
+      "Password": "priya",
+      "id": 204
+    },
+    {
+      "First Name": "sejal",
+      "Last Name": "jaiswal",
+      "Email": "sejal234",
+      "Password": "sejal",
+      "id": 205
     }
   ]
 }
