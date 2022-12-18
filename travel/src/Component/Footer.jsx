@@ -12,7 +12,7 @@ import {
 
 const Footer = () => {
      return (
-        <Box >
+        <Box marginTop='10px'>
             <Box width="95%" height='350px' bgImage="url('https://a.travel-assets.com/travel-assets-manager/gmvd-1482-bookearly-emea/667x320.jpg')"
              bgRepeat="no-repeat" bgSize='100%' bgPosition='center' m='auto' borderRadius='20px' position='relative' >
                 <Box position='absolute' bottom='1' left='2'>

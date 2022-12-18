@@ -3,7 +3,7 @@ import {
     Input,Stack,Button, Heading,useColorModeValue
   } from '@chakra-ui/react';
 import axios from 'axios';
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 // import Home from './Home';

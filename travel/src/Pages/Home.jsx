@@ -1,10 +1,11 @@
-import { Tabs, TabList, TabPanels, Tab, TabPanel ,Box,Input,InputGroup,Button,Flex,InputAddon,Checkbox,Image,
-  InputLeftElement,MenuButton,Menu,MenuList,MenuItem,Text,Grid, Center,Select} from '@chakra-ui/react'
+import { Tabs, TabList, TabPanels, Tab, TabPanel,Box,Input,Button,Flex,Image,Text,Select} from '@chakra-ui/react'
 import '../Component/Navbar.css'
-import {FaMapMarkerAlt} from "react-icons/fa";
-import {GrAddCircle ,GrSubtractCircle} from "react-icons/gr";
-import {HiSwitchHorizontal} from 'react-icons/hi'
-import {HiBuildingOffice2} from 'react-icons/hi2'
+
+import Stays from './Stays'
+import Flights from './Flights'
+import Packages from './Packages';
+import Cars from './Cars'
+import Holidays from './Holidays'
 const Home = () => {
 
     return (
@@ -12,7 +13,7 @@ const Home = () => {
         <Box width='90%' m='20px auto 20px auto' border='1px solid #343b53' padding={5} borderRadius='20px' >
   <Tabs >
   <TabList justifyContent='center' alignItems='center'>
-    <Tab className='menu'>Stays</Tab>
+  <Tab className='menu'>Stays</Tab>
     <Tab className='menu'>Flights</Tab>
     <Tab className='menu'>Cars</Tab>
     <Tab className='menu'>Packeges</Tab>
@@ -22,255 +23,24 @@ const Home = () => {
   <TabPanels>
 
     <TabPanel>
-      <Box gap={3} display='grid'>
-        <Flex gap={3}>
-      <InputGroup width='300px'>
-    <InputLeftElement
-      pointerEvents='none'
-      children={<FaMapMarkerAlt color='gray.300' />}/>
-      <Input type='map' placeholder='Going to' />
-      </InputGroup>
-
-      <InputGroup width='245px'>
-    <InputAddon
-      pointerEvents='none'
-      children='check In'/>
-      <Input type='date' placeholder='Check In' ></Input>
-      </InputGroup>
-
-      <InputGroup width='245px'>
-    <InputAddon
-      pointerEvents='none'
-      children='check out'/>
-      <Input type='date' placeholder='Check out' />
-      </InputGroup>
-
-  <Menu >
-  <MenuButton as={Button} leftIcon={<FaMapMarkerAlt/>} width='250px'>    
-    <Grid width='140px'>
-      <Box>
-      <Text size='5px'>Traveller</Text></Box>
-      <Box><Text >1room, 2traveller</Text></Box>
-    </Grid>
-  </MenuButton>
-      <MenuList>
-        <MenuItem gap={2} ><Text fontWeight='bold' size='15px'>Travellers</Text></MenuItem>
-        <MenuItem gap={2}><Text size='5px'>Room1</Text></MenuItem>
-        <MenuItem gap={2} display='flex' justifyContent='space-between'>
-            <Box>Adults</Box>
-            <Box display='flex'>
-             <Text><Center gap={2}> <GrAddCircle size='20px'/>  1  <GrSubtractCircle size='20px'/> </Center></Text> 
-            </Box>
-        </MenuItem>
-        <MenuItem gap={2} display='flex' justifyContent='space-between'>
-            <Box>
-              <Box>Children</Box>
-              <Box><Text fontSize='14px'>Ages 0 to 17</Text></Box>
-            </Box>
-            <Box display='flex'>
-             <Text><Center gap={2}> <GrAddCircle size='20px'/>  1  <GrSubtractCircle size='20px'/> </Center></Text> 
-            </Box>
-        </MenuItem>
-       </MenuList>
-     </Menu>
-       </Flex>
-       <Box width='250px' display='flex' gap={3}>
- <Checkbox defaultChecked>Add a Flight</Checkbox>
- <Checkbox defaultChecked>Add a Car</Checkbox></Box>
-      </Box>
-      <Button bg='#3662d8' width='200px' color='white'>Search</Button>
+      <Stays />
     </TabPanel>
 
     <TabPanel>
-    <Tabs variant='unstyled'>
-  <TabList>
-    <Tab  _selected={{ color: '#3662d8', bg: '#BECDF8' }}>Return </Tab>
-    <Tab  _selected={{ color: '#3662d8', bg: '#BECDF8' }}>One way</Tab>
-  </TabList>
-  <TabPanels>
-    <TabPanel>
-      <Flex gap={1}>
-      <InputGroup width='300px'>
-    <InputLeftElement
-      pointerEvents='none'
-      children={<FaMapMarkerAlt color='gray.300' />}/>
-      <Input type='map' placeholder='Leaving From' />
-      </InputGroup>
-      <Center><HiSwitchHorizontal /></Center>
-      <InputGroup width='300px'>
-    <InputLeftElement
-      pointerEvents='none'
-      children={<FaMapMarkerAlt color='gray.300' />}/>
-      <Input type='map' placeholder='Going to' />
-      </InputGroup>
-      <InputGroup width='245px'>
-    <InputAddon
-      pointerEvents='none'
-      children='Check In'/>
-      <Input type='date' placeholder='Check In' ></Input>
-      </InputGroup>
-      <InputGroup width='245px'>
-    <InputAddon
-      pointerEvents='none'
-      children='Returning'/>
-      <Input type='date' placeholder='Check In' ></Input>
-      </InputGroup>
-      </Flex>
-      <Button bg='#3662d8' width='200px' color='white' marginTop='30px'>Search</Button>
-    </TabPanel>
-    <TabPanel>
-    <Flex gap={1}>
-      <InputGroup width='300px'>
-    <InputLeftElement
-      pointerEvents='none'
-      children={<FaMapMarkerAlt color='gray.300' />}/>
-      <Input type='map' placeholder='Leaving From' />
-      </InputGroup>
-      <Center><HiSwitchHorizontal /></Center>
-      <InputGroup width='300px'>
-    <InputLeftElement
-      pointerEvents='none'
-      children={<FaMapMarkerAlt color='gray.300' />}/>
-      <Input type='map' placeholder='Going to' />
-      </InputGroup>
-      <InputGroup width='275px'>
-    <InputAddon
-      pointerEvents='none'
-      children='Check In'/>
-      <Input type='date' placeholder='Check In' ></Input>
-      </InputGroup>
-      </Flex>
-      <Button bg='#3662d8' width='200px' color='white' marginTop='30px'>Search</Button>
-    </TabPanel>
-  </TabPanels>
-</Tabs>
-
+     <Flights />
     </TabPanel>
 
     <TabPanel>
-    <Tabs variant='unstyled'>
-  <TabList>
-    <Tab  _selected={{ color: '#3662d8', bg: '#BECDF8' }}>Car hire </Tab>
-    <Tab  _selected={{ color: '#3662d8', bg: '#BECDF8' }}>Airport transport</Tab>
-  </TabList>
-  <TabPanels>
-    <TabPanel>
-      <Grid gap={2}>
-      <Flex gap={2}>
-      <InputGroup >
-    <InputLeftElement
-      pointerEvents='none'
-      children={<FaMapMarkerAlt color='gray.300' />}/>
-      <Input type='map' placeholder='Pick up' />
-      </InputGroup>
-      <InputGroup >
-    <InputLeftElement
-      pointerEvents='none'
-      children={<FaMapMarkerAlt color='gray.300' />}/>
-      <Input type='map' placeholder='Same as pick up' />
-      </InputGroup>
-      </Flex>
-      <Flex gap={2}>
-      <InputGroup width='245px'>
-    <InputAddon
-      pointerEvents='none'
-      children='Pick-up'/>
-      <Input type='date' placeholder='Check In' ></Input>
-      </InputGroup>
-      <InputGroup width='245px'>
-    <InputAddon
-      pointerEvents='none'
-      children='Drop-off'/>
-      <Input type='date' placeholder='Check In' ></Input>
-      </InputGroup>
-
-      <InputGroup width='245px'>
-    <InputAddon
-      pointerEvents='none'
-      children='Pick-up'/>
-      <Input type='time' placeholder='Check In' ></Input>
-      </InputGroup>
-
-      <InputGroup width='245px'>
-    <InputAddon
-      pointerEvents='none'
-      children='Drop-off'/>
-      <Input type='time' placeholder='Check In' ></Input>
-      </InputGroup>
-      </Flex>
-      </Grid>
-      <Button bg='#3662d8' width='200px' color='white' marginTop='30px'>Search</Button>
-    </TabPanel>
-    <TabPanel>
-    <Flex gap={1}>
-      <InputGroup width='300px'>
-    <InputLeftElement
-      pointerEvents='none'
-      children={<FaMapMarkerAlt color='gray.300' />}/>
-      <Input type='map' placeholder='Leaving From' />
-      </InputGroup>
-      <Center><HiSwitchHorizontal /></Center>
-      <InputGroup width='300px'>
-    <InputLeftElement
-      pointerEvents='none'
-      children={<HiBuildingOffice2 color='gray.300' />}/>
-      <Input type='text' placeholder='Hotel Name' />
-      </InputGroup>
-      <InputGroup width='245px'>
-    <InputAddon
-      pointerEvents='none'
-      children='Flight-arrival'/>
-      <Input type='date' placeholder='Flight-arrival' ></Input>
-      </InputGroup>
-
-      <InputGroup width='245px'>
-    <InputAddon
-      pointerEvents='none'
-      children='Flight-arrival'/>
-      <Input type='time' placeholder='Flight-arrival' ></Input>
-      </InputGroup>
-      </Flex>
-      <Button bg='#3662d8' width='200px' color='white' marginTop='30px'>Search</Button>
-    </TabPanel>
-  </TabPanels>
-</Tabs>
-
+     <Cars />
     </TabPanel>
     
     <TabPanel>
-    <Flex gap={1}>
-      <InputGroup width='300px'>
-    <InputLeftElement
-      pointerEvents='none'
-      children={<FaMapMarkerAlt color='gray.300' />}/>
-      <Input type='map' placeholder='Leaving From' />
-      </InputGroup>
-      <Center><HiSwitchHorizontal /></Center>
-      <InputGroup width='300px'>
-    <InputLeftElement
-      pointerEvents='none'
-      children={<FaMapMarkerAlt color='gray.300' />}/>
-      <Input type='map' placeholder='Going to' />
-      </InputGroup>
-      <InputGroup width='245px'>
-    <InputAddon
-      pointerEvents='none'
-      children='Departing'/>
-      <Input type='date' placeholder='Check In' ></Input>
-      </InputGroup>
-      <InputGroup width='245px'>
-    <InputAddon
-      pointerEvents='none'
-      children='Returning'/>
-      <Input type='date' placeholder='Check In' ></Input>
-      </InputGroup>
-      </Flex>
-      <Button bg='#3662d8' width='200px' color='white' marginTop='30px'>Search</Button>
+     <Packages />
     </TabPanel>
 
 
     <TabPanel>
-      <Flex gap ={2}>
+      {/* <Flex gap ={2}>
     <InputGroup >
     <InputLeftElement
       pointerEvents='none'
@@ -290,7 +60,8 @@ const Home = () => {
       <Input type='date' placeholder='Check In' ></Input>
       </InputGroup>
       </Flex>
-      <Button bg='#3662d8' width='200px' color='white' marginTop='30px'>Search</Button>
+      <Button bg='#3662d8' width='200px' color='white' marginTop='30px'>Search</Button> */}
+      <Holidays />
     </TabPanel>
 
   </TabPanels>
