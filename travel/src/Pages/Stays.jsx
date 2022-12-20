@@ -14,6 +14,8 @@ const initalState = {
 const Stays = () => {
     const navigate = useNavigate()
     const [place,setPlace] = useState(initalState);
+    const [add,setAdd] = useState(1);
+    const [age,setAge] = useState(1);
    const handleChange = (e) => {
      const k = e.target.name === "car" || e.target.name === "fligth" ? e.target.checked : e.target.value;
       setPlace({...place,[e.target.name] : k})
@@ -67,7 +69,9 @@ const Stays = () => {
         <MenuItem gap={2} display='flex' justifyContent='space-between'>
             <Box>Adults</Box>
             <Box display='flex'>
-             <Text><Center gap={2}> <GrAddCircle size='20px'/>  1  <GrSubtractCircle size='20px'/> </Center></Text> 
+             <Text><Center gap={2}> <GrAddCircle size='20px' onClick={()=>{if(add === 5)setAdd(add)
+             else setAdd(add+1)}}/> {add} <GrSubtractCircle size='20px' onClick={()=>{if(add===1)setAdd(add)
+            else setAdd(add-1)}} /> </Center></Text> 
             </Box>
         </MenuItem>
         <MenuItem gap={2} display='flex' justifyContent='space-between'>
@@ -76,7 +80,13 @@ const Stays = () => {
               <Box><Text fontSize='14px'>Ages 0 to 17</Text></Box>
             </Box>
             <Box display='flex'>
-             <Text><Center gap={2}> <GrAddCircle size='20px'/>  1  <GrSubtractCircle size='20px'/> </Center></Text> 
+             <Text><Center gap={2}> <GrAddCircle size='20px' onClick={()=>{
+              if(age===16)setAge(age)  
+              else setAge(age+1)
+             }}/>  {age} <GrSubtractCircle size='20px' onClick={()=>{
+              if(age===1)setAge(age)  
+              else setAge(age-1)
+             }}/> </Center></Text> 
             </Box>
         </MenuItem>
        </MenuList>

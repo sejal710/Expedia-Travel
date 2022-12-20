@@ -5,9 +5,9 @@ const arr = ["Mumbai","Delhi","Kolkata","Chennai","Bangalore","	Hyderabad","Ahme
 "Lucknow","Nagpur","Indore","Patna","Bhopal","Thane","Vadodara","Visakhapatnam","Pimpri-Chinchwad"]
 const Place = () => {
 const location = useLocation()
-const {car,flight,going_to,checkin_date,checkout_date} = location.state;
+const {going_to} = location.state;
 let k ="";
-arr.map((el)=>{
+arr.map((el,i)=>{
     if(el === going_to){
         k = el
         return k;

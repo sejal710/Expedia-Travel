@@ -1,5 +1,5 @@
-import { Tabs, TabList, TabPanels, Tab, TabPanel,Box,Input,InputGroup,Button,Flex,InputAddon,Image,InputLeftElement,
-    Text,Grid, Center,Select} from '@chakra-ui/react'
+import { Tabs, TabList, TabPanels, Tab, TabPanel,Input,InputGroup,Button,Flex,InputAddon,InputLeftElement,
+    Grid, Center} from '@chakra-ui/react'
     import {FaMapMarkerAlt} from "react-icons/fa";
 import {HiSwitchHorizontal} from 'react-icons/hi'
 import {HiBuildingOffice2} from 'react-icons/hi2'

@@ -42,7 +42,7 @@ import {Link as RouterLink} from 'react-router-dom'
   const initialRef = React.useRef(null)
   const finalRef = React.useRef(null)
   return (
-    <div style={{width:"95%",display:"inline",margin:"auto"}}>
+    <div style={{width:"95%",display:"inline",margin:"auto",height:"80px"}}>
 <Flex  padding="2px" height="80px">
    <Box height="100%" width="30%" gap={4} display="flex">
    <Link as={RouterLink} to='/'><Image src={logo1} alt='logo' width='150px' height='70px' /></Link>

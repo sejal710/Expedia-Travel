@@ -1,4 +1,4 @@
-import { Box,Input,InputGroup,Button,Flex,InputAddon,Image,InputLeftElement,Center} from '@chakra-ui/react'
+import { Box,Input,InputGroup,Button,Flex,InputAddon,InputLeftElement,Center} from '@chakra-ui/react'
   import '../Component/Navbar.css'
   import {FaMapMarkerAlt} from "react-icons/fa";
   import {HiSwitchHorizontal} from 'react-icons/hi'

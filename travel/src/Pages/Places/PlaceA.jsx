@@ -12,9 +12,9 @@ const PlaceA = ({going_to}) => {
     return (
         <Box>
             {
-               data && data.map((el) => {
+               data && data.map((el,i) => {
                     return (
-                        <Box width={"80%"} height={"320px"} padding='10px'>
+                        <Box width={"80%"} height={"320px"} padding='10px' key={i}>
                             <Flex>
                             <Box width={'33%'} height={'100%'}>
                                <Carousel img1={el.img1} img2={el.img2} img3={el.img3} img4={el.img4} /> 

@@ -11,6 +11,7 @@ import Flight from '../Pages/Flights'
 import Cars from '../Pages/Cars'
 import Packages from '../Pages/Packages';
 import Holidays from '../Pages/Holidays';
+import PrivateRoute from './PrivateRoute';
 const AllRouter = () => {
     return (
         <Routes>
@@ -20,12 +21,12 @@ const AllRouter = () => {
             <Route path='/notification' element={<Notification />}/>
             <Route path='/signin' element={<SignIn />} />
             <Route path='/create' element={<CreateAccount />} />
-            <Route path='/place' element={<Place />} />
-            <Route path='/stays' element={<Stays />} />
-            <Route path='/flights' element={<Flight />} />
-            <Route path='/cars' element={<Cars />} />
-            <Route path='/packages' element={<Packages />} />
-            <Route path='/holiday' element={<Holidays />} />
+            <Route path='/place' element={<PrivateRoute><Place /></PrivateRoute>} />
+            <Route path='/stays' element={<PrivateRoute><Stays /></PrivateRoute>} />
+            <Route path='/flights' element={<PrivateRoute><Flight /></PrivateRoute>} />
+            <Route path='/cars' element={<PrivateRoute><Cars /></PrivateRoute>} />
+            <Route path='/packages' element={<PrivateRoute><Packages /></PrivateRoute>} />
+            <Route path='/holiday' element={<PrivateRoute><Holidays /></PrivateRoute>} />
         </Routes>
 
     )

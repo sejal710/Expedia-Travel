@@ -7,7 +7,6 @@ import Packages from './Packages';
 import Cars from './Cars'
 import Holidays from './Holidays'
 const Home = () => {
-
     return (
       <Box display='grid' gap={3}>
         <Box width='90%' m='20px auto 20px auto' border='1px solid #343b53' padding={5} borderRadius='20px' >
