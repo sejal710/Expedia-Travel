@@ -17,7 +17,9 @@ import {
   import {  useState } from 'react';
   import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
   import {Link as RouterLink} from 'react-router-dom'
-const CreateAccount = () => {
+  import { useNavigate } from 'react-router-dom';
+  const CreateAccount = () => {
+  const navigate = useNavigate()
     const [showPassword, setShowPassword] = useState(false);
     // const [data,setData] = useState({});
     const [text,setText] = useState({})
@@ -42,6 +44,12 @@ const CreateAccount = () => {
     const handleClick = (e) => {
       e.preventDefault();
       getData(text)
+      if(text.FirstName !== "" && text.LastName !== "" && text.Email !== "" && text.Password !== ""){
+        navigate('/signin')
+      }
+      else{
+        alert("Please Fill Properly")
+      }
     }
     return (
               <Flex

@@ -17,16 +17,16 @@ import {Link as RouterLink} from 'react-router-dom'
  const menu = () => {
  
     return (
-      <Menu >
+      <Menu m='auto'>
   <MenuButton>
    <Text className='menu'><Center gap={2}>More Travel <ChevronDownIcon /></Center></Text>
   </MenuButton>
   <MenuList>
-    <MenuItem gap={2} ><HiBuildingOffice2/>Stays</MenuItem>
-    <MenuItem gap={2}><MdAirplanemodeActive/>Flights</MenuItem>
-    <MenuItem gap={2}><FaCarSide/>Cars</MenuItem>
-    <MenuItem gap={2}><BiPackage/>Packeges</MenuItem>
-    <MenuItem gap={2}><MdOutlineLocalActivity/>Holiday Activities</MenuItem>
+  <Link as={RouterLink} to='/stays'><MenuItem gap={2} ><HiBuildingOffice2/>Stays</MenuItem></Link>
+  <Link as={RouterLink} to='/flights'><MenuItem gap={2}><MdAirplanemodeActive/>Flights</MenuItem></Link>
+  <Link as={RouterLink} to='/cars'> <MenuItem gap={2}><FaCarSide/>Cars</MenuItem></Link>
+  <Link as={RouterLink} to='/packages'> <MenuItem gap={2}><BiPackage/>Packeges</MenuItem></Link>
+  <Link as={RouterLink} to='/holiday'><MenuItem gap={2}><MdOutlineLocalActivity/>Holiday Activities</MenuItem></Link>
     <MenuItem>Deals</MenuItem>
     <MenuItem>Group and mettings</MenuItem>
     <MenuItem>Mobile</MenuItem>
@@ -42,7 +42,7 @@ import {Link as RouterLink} from 'react-router-dom'
   const initialRef = React.useRef(null)
   const finalRef = React.useRef(null)
   return (
-    <div style={{width:"95%",display:"inline",margin:"auto"}}>
+    <div style={{width:"95%",display:"inline",margin:"auto",height:"80px"}}>
 <Flex  padding="2px" height="80px">
    <Box height="100%" width="30%" gap={4} display="flex">
    <Link as={RouterLink} to='/'><Image src={logo1} alt='logo' width='150px' height='70px' /></Link>
